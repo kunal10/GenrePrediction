@@ -1,0 +1,46 @@
+# Local set up
+
+# Install virtualenv if its not already there. Generally comes presintalled with python
+pip install virtualenv
+
+# Create a directory for storing virtual environments for different projects.
+mkdir virtualEnvs
+
+# Create virtual environment for this project
+cd virtualEnvs
+virtualenv word2vec
+
+# Activate new virtual environment
+cd word2vec
+source bin/activate
+
+# Install required packages
+pip install gensim
+pip install BeautifulSoup4
+pip install nltk
+pip install -U scikit-learn
+
+########################################################################################
+
+# Maverick set up
+
+# Install 
+module load gcc/4.9.1
+export CC=gcc
+export CXX=g++
+luarocks install npy4th 
+
+# Create a virtual env and install required packages
+conda create -n word2vec python=2.7 anaconda
+source activate word2vec
+conda install -n word2vec  gensim
+conda install -n word2vec BeautifulSoup4
+conda install -n word2vec nltk
+conda install -n word2vec scikit-learn
+
+# To deactivate the env
+source deactivate
+
+# To remove the virtual env
+conda remove -n word2vec -all
+
