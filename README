@@ -1,14 +1,24 @@
 PROJECT TITLE: MUSIC GENRE PREDICTION USING SONG LYRICS
 
+########################################################################################
+
 TEAM INFO:  Name         UTEid   
 1.          KUNAL LAD    KL28697)  
 2.          MANU AGARWAL MA53767
 
-# Dataset
-We used the MillionSongsDataset(http://labrosa.ee.columbia.edu/millionsong/) for this project
+########################################################################################
 
-# Pretrained Models used
-We used GoogleNews word2vec model(https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit) for extracting word2vec features
+# Dataset : We used the MillionSongsDataset(http://labrosa.ee.columbia.edu/millionsong/) for this project
+
+# Pretrained Models: We used GoogleNews word2vec model(https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit) for extracting word2vec features
+
+# Code Referrences
+
+- For preprocessing and Bag of Words based models we referred to Kaggle Tutorial (https://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words)
+
+- We adapted our prior implementation of many to sequence-to-sequence-LSTM for VideoSummarization project (https://github.com/kunal10/VideoSummarization) to sequence-to-sequence by referring to this example in RNN library (https://github.com/Element-Research/rnn/blob/master/examples/sequence-to-one.lua)
+
+########################################################################################
 
 # Local set up
 

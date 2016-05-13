@@ -73,14 +73,6 @@ def write_features(train_features,test_features,train_file,test_file):
 
 
 def prepare_data(test_train_split, train_features_file, test_features_file):
-    
-    #model = models.Word2Vec.load_word2vec_format(model_binary, binary=True)
-    
-    #train_feats = {}; test_feats = {}
-    #train_labels = {}; test_labels = {}
-    #train_feat_len = {}; test_feat_len = {}
-    #train_song_len = {}; test_song_len = {}
-    
     vectorizer = CountVectorizer(analyzer = "word",tokenizer = None,preprocessor = None,stop_words = None,max_features = 1000) 
     song_id = 0
     clean_train_songs=[]
@@ -139,19 +131,6 @@ def prepare_data(test_train_split, train_features_file, test_features_file):
 		acc=acc+1
 	iteration=iteration+1
     print 'Accuracy=%f' % (acc*1.0/len(result))
-    #print result.shape 
-    #print len(result)
-    #print result[0]=="classical"
-    #print result[1]=="classical"
-            
-    #print('Number of training examples  = ' + str(len(train_feats)))
-    #print('Number of test examples  = ' + str(len(test_feats)))
-    #print(np.min([train_feat_len[id_] for id_ in train_feats]))
-    #print(np.min([test_feat_len[id_] for id_ in test_feats]))
-        
-    # Save features and labels
-    #write_features(train_feats, train_labels, train_feat_len, train_song_len, train_features_file, train_labels_file)
-    #write_features(test_feats, test_labels, test_feat_len, test_song_len, test_features_file, test_labels_file)
             
             
 if __name__ == '__main__':
