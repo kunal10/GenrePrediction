@@ -16,7 +16,7 @@ TEAM INFO:  Name         UTEid
 
 - For preprocessing and Bag of Words based models we referred to Kaggle Tutorial (https://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words)
 
-- We adapted our prior implementation of sequence-to-sequence-LSTM for VideoSummarization project (https://github.com/kunal10/VideoSummarization) to sequence-to-sequence by referring to this example in RNN library (https://github.com/Element-Research/rnn/blob/master/examples/sequence-to-one.lua)
+- We adapted our prior implementation of sequence-to-sequence LSTM for VideoSummarization project (https://github.com/kunal10/VideoSummarization) to sequence-to-one LSTM by referring to this example in RNN library (https://github.com/Element-Research/rnn/blob/master/examples/sequence-to-one.lua)
 
 ########################################################################################
 
