@@ -3,7 +3,7 @@ PROJECT TITLE: MUSIC GENRE PREDICTION USING SONG LYRICS
 ########################################################################################
 
 TEAM INFO:  Name         UTEid   
-1.          KUNAL LAD    KL28697)  
+1.          KUNAL LAD    KL28697  
 2.          MANU AGARWAL MA53767
 
 ########################################################################################
@@ -16,7 +16,7 @@ TEAM INFO:  Name         UTEid
 
 - For preprocessing and Bag of Words based models we referred to Kaggle Tutorial (https://www.kaggle.com/c/word2vec-nlp-tutorial/details/part-1-for-beginners-bag-of-words)
 
-- We adapted our prior implementation of many to sequence-to-sequence-LSTM for VideoSummarization project (https://github.com/kunal10/VideoSummarization) to sequence-to-sequence by referring to this example in RNN library (https://github.com/Element-Research/rnn/blob/master/examples/sequence-to-one.lua)
+- We adapted our prior implementation of sequence-to-sequence-LSTM for VideoSummarization project (https://github.com/kunal10/VideoSummarization) to sequence-to-sequence by referring to this example in RNN library (https://github.com/Element-Research/rnn/blob/master/examples/sequence-to-one.lua)
 
 ########################################################################################
 
@@ -105,10 +105,10 @@ luajit prepareTorchData.lua
 # Computing train and test data class distribution for weight normalization during training
 python computeGenreFreq.py
 
-# Training BoW model
+# Training and evaluating BoW model
 python bow.py
 
-# Training BoW with averaging
+# Training and evaluating BoW with averaging
 python bow_with_averaging.py
 
 # Training torch models
