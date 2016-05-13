@@ -18,6 +18,8 @@ TEAM INFO:  Name         UTEid
 
 - We adapted our prior implementation of sequence-to-sequence LSTM for VideoSummarization project (https://github.com/kunal10/VideoSummarization) to sequence-to-one LSTM by referring to this example in RNN library (https://github.com/Element-Research/rnn/blob/master/examples/sequence-to-one.lua)
 
+# Results : All the stats and plots of experimental results can be found at https://goo.gl/smqzYb
+
 ########################################################################################
 
 # Local set up
