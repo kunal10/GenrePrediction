@@ -1,3 +1,15 @@
+PROJECT TITLE: MUSIC GENRE PREDICTION USING SONG LYRICS
+
+TEAM INFO:  Name         UTEid   
+1.          KUNAL LAD    KL28697)  
+2.          MANU AGARWAL MA53767
+
+# Dataset
+We used the MillionSongsDataset(http://labrosa.ee.columbia.edu/millionsong/) for this project
+
+# Pretrained Models used
+We used GoogleNews word2vec model(https://drive.google.com/file/d/0B7XkCwpI5KDYNlNUTTlSS21pQmM/edit) for extracting word2vec features
+
 # Local set up
 
 # Install virtualenv if its not already there. Generally comes presintalled with python
@@ -24,11 +36,20 @@ pip install -U scikit-learn
 
 # Maverick set up
 
-# Install 
+# Create a directory for storing virtual environments for different projects.
+mkdir virtualEnvs
+
+# Create virtual environment for this project
+cd virtualEnvs
+virtualenv word2vec
+
+# To activate the env
+source activate word2vec
+
+# Required for npy4th
 module load gcc/4.9.1
 export CC=gcc
 export CXX=g++
-luarocks install npy4th 
 
 # Create a virtual env and install required packages
 conda create -n word2vec python=2.7 anaconda
@@ -38,9 +59,56 @@ conda install -n word2vec BeautifulSoup4
 conda install -n word2vec nltk
 conda install -n word2vec scikit-learn
 
+# Install 
+luarocks install npy4th 
+
 # To deactivate the env
 source deactivate
 
 # To remove the virtual env
 conda remove -n word2vec -all
 
+########################################################################################
+
+# Commands to run the scripts for preprocessing/training the models
+
+# NOTE : All these commands expect that following directories are present in GenrePrediction directory
+data/ 
+features/
+models/
+logs/
+
+# Due to huge sizes of these directories we are not submitting them.
+# To replicate the experiments, first create these after cloning our repository
+
+mkdir data features models logs 
+
+# In Virtual Environment
+cd GenrePrediction
+
+# Preprocessing
+python preprocessing.py
+
+# Preparing data for training Torch models
+luajit prepareTorchData.lua
+
+# Computing train and test data class distribution for weight normalization during training
+python computeGenreFreq.py
+
+# Training BoW model
+python bow.py
+
+# Training BoW with averaging
+python bow_with_averaging.py
+
+# Training torch models
+cd slurmScripts
+sbatch train_lstm.sh
+sbatch train_blstm.sh
+
+# Evaluating torch model.
+cd slurmScripts
+# Pass lstm model to be evaluated in evaluate_lstm.sh file, then run
+sbatch evaluate_lstm.sh
+# Pass blstm model to be evaluated in evaluate_blstm.sh file then run
+sbatch evaluate_blstm.sh

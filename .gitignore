@@ -4,4 +4,6 @@ tmp/
 data/
 features/
 models/
+logs/
+results/
 ipythonScripts/
